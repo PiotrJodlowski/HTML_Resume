@@ -14,6 +14,7 @@
 			.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
 		</style>
 		
+				
 	</head>
 
 
@@ -25,7 +26,7 @@
 		
 		
 		<!-- Formularz -->	
-		<form>
+		<form name='formularz'>
 		<table class="tg">
 		<thead>
 		  <tr>
@@ -36,7 +37,7 @@
 		<tbody>
 		  <tr>
 			<th class="tg-0lax"><label for="text">Textbox</label></th>
-			<th class="tg-0lax"><input type="text" id="text" /></th>
+			<th class="tg-0lax"><input type="text" name='text' /></th>
 		  <tr>
 		  <tr>
 			<th class="tg-0lax"><label for="email">Email</label></th>
@@ -44,11 +45,11 @@
 		  <tr>
 		  <tr>
 			<th class="tg-0lax"><label for="number">Number</label></th>
-			<th class="tg-0lax"><input type="number" id="number" /></th>
+			<th class="tg-0lax"><input type="number" name='number' /></th>
 		  <tr>
 		  <tr>
 			<th class="tg-0lax"><label for="date">Data</label></th>
-			<th class="tg-0lax"><input type="date" id="date" /></th>
+			<th class="tg-0lax"><input type="date" name='date' /></th>
 		  <tr>
 		  <tr>
 			<th class="tg-0lax"><label for="url">URL</label></th>
@@ -89,5 +90,59 @@
 		<p>
 		</form>
 		
+		<!-- Dodawanie pól -->
+		<p>
+		
+		
+		<strong>DODAWANIE PÓL</strong>
+					
+		<form name='Kalkulator'>
+			<label for="number">ZmiennaA</label>
+			<input type="number" name='ZmiennaA' /> <br>
+			<label for="number">ZmiennaB</label>
+			<input type="number" name='ZmiennaB' /> <br>
+			<label for="number">Wynik</label>
+			<input type="number" name='Wynik' />
+			<button onclick="myFunction()">Oblicz</button>
+		</form>
+		
+		<script>
+				
+				
+			const Rok = '1986';
+			console.log(Number(Rok)+18);
+			document.forms.formularz.number.value = (Number(Rok)+18);	
+				function myFunction()
+				{ 
+					let A=Number(document.forms.Kalkulator.ZmiennaA.value);
+					let B=Number(document.forms.Kalkulator.ZmiennaB.value);
+					document.forms.Kalkulator.Wynik.value = A + B;
+					return A+B;
+				}
 			
+			
+			<!-- FUNKCJE -->
+			function calcAge(birthYear) {
+				return 2022- birthYear;
+				};
+				
+			const calcAge2 = function(birthYear) {
+				return 2022- birthYear;
+				};
+			
+			const calcAge3 = birthYear => 2022- birthYear;
+			// calcAge3 to to samo co calcAge2 tylko napisane szyciej za pomocą arrow function
+			
+						
+			const birthYear = 1979;
+			calcAge(birthYear);
+			console.log(calcAge(birthYear));	
+			console.log(calcAge2(birthYear));
+			console.log(calcAge3(birthYear));
+			
+			
+		</script>
+		
+
+		
 </body>
